@@ -1,24 +1,26 @@
-
 //1a -- subtract first age from last age
 console.log("1.	Create an array called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93. 1a. Programmatically subtract the value of the first element in the array from the value in the last element of the array •	Do not use numbers to reference the last element.");
 
 ages = [3, 9, 23, 64, 2, 8, 28, 93];
-console.log(ages);
+console.log("1 SOLUTION: " + ages);
+
 let endAgeMinusfirstAge = ages.pop() - ages.shift();
-console.log("Current first age minus last age is " + endAgeMinusfirstAge);
+console.log("1A SOLUTION: " + endAgeMinusfirstAge);
+
 
 //1b -- add a new age to array, then repeat step above
 console.log("1b.Add a new age to your array and repeat the step above to ensure it is dynamic. (works for arrays of different lengths).");
 
 ages.push(53);
-console.log(ages);
+console.log("new array: + ages");
 endAgeMinusfirstAge = ages.pop() - ages.shift();
-console.log("Current first age minus last age is " + endAgeMinusfirstAge);
+console.log("1B SOLUTION: " + endAgeMinusfirstAge);
+
 
 //1c use a loop to iterate through the array and calculate average age
 console.log("1c. Use a loop to iterate through the array and calculate the average age.")
 
-console.log(ages);
+console.log("Current array: " + ages);
 
 let sumOfAges = 0;
 let averageAge = 0;
@@ -27,14 +29,17 @@ ages.forEach(function(age) {
     sumOfAges = sumOfAges + age;
     averageAge = sumOfAges/ages.length;
 });
-console.log("Average age is: " +averageAge);
+console.log("1c SOLUTION: Average age is: " + averageAge);
+
 
 //2 create an array with values ‘Sam’, ‘Tommy’, ‘Tim’, ‘Sally’, ‘Buck’, ‘Bob’.
 console.log("2.	Create an array called names that contains the following values: ‘Sam’, ‘Tommy’, ‘Tim’, ‘Sally’, ‘Buck’, ‘Bob’, and 2a.	Use a loop to iterate through the array and calculate the average number of letters per name.");
 
-//2a use a loop to calculate avg number of letters per name
 let names = ["Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"]
-console.log(names);
+console.log("2a SOLUTION: " + names);
+
+//2a use a loop to calculate avg number of letters per name
+
 
 let sumOfLengths = 0;
 let averageLength = 0;
@@ -77,8 +82,10 @@ console.log("6.	Write a loop to iterate over the nameLengths array and calculate
 console.log("This is a trick question! This was already completed in step 2a, and violates DRY (don't repeat code)");
 console.log("The sum of all the name lengths is " + sumOfLengths);
 
+
 //7 Write a function that takes two parameters, "word" and n and returns the word concatenated to itself n number of times.
-console.log("7.	Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).")
+console.log("7.	Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).");
+
 function repeatWords(word, n){
     
     let j = 0;
@@ -90,37 +97,45 @@ function repeatWords(word, n){
         j++;
     } while(j < n);
     
-    console.log(repeatWordNTimes);
+    return(repeatWordNTimes);
 }
+let challenge7answer = repeatWords("Hi", 6);
+console.log("test case: " + challenge7answer);
 
-// 8????? Create a function to return a full name when given a last and first name. 
+
+//8 Create a function to return a full name when given a last and first name. 
 console.log("8.Write a function that takes two parameters, firstName and lastName, and returns a full name. •The full name should be the first and the last name separated by a space.");
-const aFirstName;
-const aLastName;
+let aFirstName;
+let aLastName;
 function returnFullName(aFirstName, aLastName) {
     const fullName = `${aFirstName} ${aLastName}`;
     return fullName;
 }
+let testCase8 = returnFullName("Jane", "Doe"); 
+console.log(testCase8);
 
-//?????9 Create a function that takes an array of numbers and returns true if the sum is >100 
-console.log("9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.")
 
-let arrayOfNumbers = [];
+//9 Create a function that takes an array of numbers and returns true if the sum is >100 
+/*console.log("9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.")
 
-function sumNumbersinArray(arrayOfNumbers) {
+let arrayOfNumbers = [1, 2, 3];
 
-    let sumOfAllNumbers = arrayOfNumbers.reduce(function(accumulator, currentValue){
-        return accumulator + currentValue;
+//function sumNumbersinArray(arrayOfNumbers) {
+
+    let sumOfAllNumbers = arrayOfNumbers.reduce(function(total, num){
+        return total + num;
     });
+    let testCase = sumOfAllNumbers();
       
-    if(sumOfAllNumbers > 100) {
-        return true;
-    } else {
-        return false;
-    };
+    //if(sumOfAllNumbers > 100) {
+    //    return true;
+    //} else {
+    //    return false;
+    //};
 }
 
 console.log(sumNumbersinArray());
+
 
 //10 Create a function that takes an array and returns average of all elements
 console.log("10. Write a function that takes an array of numbers and returns the average of all the elements in the array.");
@@ -134,8 +149,16 @@ function averageNumbersinArray(arrayOfNumbers) {
 }
 console.log(averageNumbersinArray());
 
+
+
 //11 Compare two arrays and return true if first array avg is greater
 console.log("11. Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.");
+
+function compareArrays(array1, array2) {
+
+}
+
+*/
 
 //12 Is it hot out? Do you have more than $10.50? If both are true, return true. 
 console.log("12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.");
@@ -143,13 +166,19 @@ console.log("12. Write a function called willBuyDrink that takes a boolean isHot
 let isHotOutside = true;
 let moneyInPocket;
 
-function canYouGetIceCream(isHotOutside, moneyInPocket){
+function willBuyDrink(isHotOutside, moneyInPocket){
     if(isHotOutside && moneyInPocket > 10.50){
         return true;
+    } else {
+        return false;
     }
 }
+console.log("12 TEST CASE: Is it true that I will buy a drink if it's hot and I have $20? Function says: " +willBuyDrink(true, 20));
+console.log("12 TEST CASE: Is it true that I will buy a drink if it's hot and I have $10? Function says: " +willBuyDrink(true, 10));
+/*
 
 //13. Solve your own problem
 console.log("13.	Create a function of your own that solves a problem.In comments, write what the function does and why you created it.");
 
 
+*/
