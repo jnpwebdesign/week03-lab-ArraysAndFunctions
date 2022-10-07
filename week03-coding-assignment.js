@@ -175,10 +175,34 @@ function willBuyDrink(isHotOutside, moneyInPocket){
 }
 console.log("12 TEST CASE: Is it true that I will buy a drink if it's hot and I have $20? Function says: " +willBuyDrink(true, 20));
 console.log("12 TEST CASE: Is it true that I will buy a drink if it's hot and I have $10? Function says: " +willBuyDrink(true, 10));
-/*
+
 
 //13. Solve your own problem
-console.log("13.	Create a function of your own that solves a problem.In comments, write what the function does and why you created it.");
+console.log("13. Create a function of your own that solves a problem.In comments, write what the function does and why you created it.");
+let amber = {
+    height: 62,
+    weight: 94,
+    hair: "dark brown",
+    preferredAnimal: "Dragon"
+};
 
+let lorelei = {
+    height: 55,
+    weight: 69,
+    hair: "dark blonde",
+    preferredAnimal: "Lion" 
+};
 
-*/
+console.log("Whose favorite animal would win in a fight?");
+let dragonScore = Math.floor((Math.random() * 100)); 
+let lionScore = Math.floor((Math.random() * 100)); 
+console.log(`The ${(amber.preferredAnimal).toLowerCase()}'s score is ${dragonScore}.`);
+console.log(`The ${(lorelei.preferredAnimal).toLowerCase()}'s score is ${lionScore}.`);
+if(dragonScore > lionScore){
+    console.log("The dragon, Amber's favorite animal, wins!");
+} else if(dragonScore < lionScore){
+    console.log("The lion, Lorelei's favorite animal, wins!");
+} else{
+    console.log("It's a tie!");
+}
+
