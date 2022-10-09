@@ -38,9 +38,8 @@ console.log("2.	Create an array called names that contains the following values:
 let names = ["Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"]
 console.log("2a SOLUTION: " + names);
 
+
 //2a use a loop to calculate avg number of letters per name
-
-
 let sumOfLengths = 0;
 let averageLength = 0;
 names.forEach(function(firstName) {
@@ -48,6 +47,7 @@ names.forEach(function(firstName) {
     averageLength =sumOfLengths / names.length;
 });
 console.log("The average number of letters is these names is " + averageLength);
+
 
 //2b use a loop to iterate through array and concatenate all names, separated by spaces
 console.log("2b. Use a loop to iterate through the array again and concatenate all the names together, separated by spaces. ");
@@ -57,15 +57,18 @@ for(firstName of names) {
 }
 console.log("All of the names are: " + allNamesTogether);
 
+
 //3 How do you access the last element of an array?
 console.log("3.	How do you access the last element of any array?");
 let lastElementName = names[names.length-1];
 console.log("You access the last element of an array with: array[array.length-1]");
 
+
 //4 How do you access the first element of an array?
 console.log("4.	How do you access the first element of any array?")
 let firstElementName = names[0];
 console.log("The first element of an array is always at the 0 index, so use: array[0]");
+
 
 //5 Create a new array nameLengths. Write a loop to create a new array that contains the lengths of each name
 console.log("5.	Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.");
@@ -116,25 +119,24 @@ console.log(testCase8);
 
 
 //9 Create a function that takes an array of numbers and returns true if the sum is >100 
-/*console.log("9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.")
+console.log("9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.")
 
-let arrayOfNumbers = [1, 2, 3];
 
-//function sumNumbersinArray(arrayOfNumbers) {
+function sumNumbersinArray(arrayOfNumbers) {
 
-    let sumOfAllNumbers = arrayOfNumbers.reduce(function(total, num){
-        return total + num;
+    let sumOfAllNumbers = arrayOfNumbers.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue;
     });
-    let testCase = sumOfAllNumbers();
-      
-    //if(sumOfAllNumbers > 100) {
-    //    return true;
-    //} else {
-    //    return false;
-    //};
-}
 
-console.log(sumNumbersinArray());
+    if(sumOfAllNumbers > 100) {
+        
+        return true + ", this array's sum total is greater than 100" ;
+    } else {
+        return false + ", this array's sum total is less than 100";
+    };
+    
+}
+console.log(sumNumbersinArray([10,20,30,40,50]));
 
 
 //10 Create a function that takes an array and returns average of all elements
@@ -143,22 +145,39 @@ console.log("10. Write a function that takes an array of numbers and returns the
 function averageNumbersinArray(arrayOfNumbers) {
 
     let averageOfAllNumbers = arrayOfNumbers.reduce(function(accumulator, currentValue){
-        return (accumulator + currentValue)/(arrayOfNumbers.length);
-    });  
-    return averageOfAllNumbers;
-}
-console.log(averageNumbersinArray());
 
+        return (accumulator + currentValue);
+    });  
+    return averageOfAllNumbers/(arrayOfNumbers.length);
+}
+console.log(`The average of all the numbers in the array is ${averageNumbersinArray([10,20,30,40,50])}.`);
 
 
 //11 Compare two arrays and return true if first array avg is greater
 console.log("11. Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.");
 
 function compareArrays(array1, array2) {
-
+      
+    let sumOfArray1= array1.reduce(function(accumulator, currentValue){
+            return (accumulator + currentValue);
+    });  
+    let sumOfArray2= array2.reduce(function(accumulator, currentValue){
+            return (accumulator + currentValue);
+    });  
+    let averageOfArray1 = sumOfArray1/(array1.length);
+    let averageOfArray2 = sumOfArray2/(array2.length);
+    console.log(`The average of your first array is ${averageOfArray1}, and the average of your second array is ${averageOfArray2}, so your answer is: `);
+    
+    if(averageOfArray1 > averageOfArray2){
+        return true;
+    } else {
+        return false;
+    }
+   
 }
+    
+console.log(compareArrays([1,2,3],[4,5,6]));
 
-*/
 
 //12 Is it hot out? Do you have more than $10.50? If both are true, return true. 
 console.log("12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.");
@@ -190,7 +209,7 @@ let lorelei = {
     height: 55,
     weight: 69,
     hair: "dark blonde",
-    preferredAnimal: "Lion" 
+    preferredAnimal: "Bunny" 
 };
 
 console.log("Whose favorite animal would win in a fight?");
@@ -201,7 +220,7 @@ console.log(`The ${(lorelei.preferredAnimal).toLowerCase()}'s score is ${lionSco
 if(dragonScore > lionScore){
     console.log("The dragon, Amber's favorite animal, wins!");
 } else if(dragonScore < lionScore){
-    console.log("The lion, Lorelei's favorite animal, wins!");
+    console.log(`${lorelei.preferredAnimal}, Lorelei's favorite animal, wins!`);
 } else{
     console.log("It's a tie!");
 }
